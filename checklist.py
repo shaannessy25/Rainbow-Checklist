@@ -27,11 +27,11 @@ def list_all_items():
 def select(function_code):
     # Create item
     if function_code == "C":
-        input_item = user_input("Input item:")
+        input_item = user_input("Input item: ")
         create(input_item)
         # Read item
     elif function_code == "R":
-        item_index = user_input("Index Number?")
+        item_index = user_input("Index Number? ")
 
         # Remember that item_index must actually exist or our program will crash.
         read(item_index)
@@ -42,7 +42,7 @@ def select(function_code):
 
     # Catch all
     else:
-        print("Unknown Option")
+        print("Unknown Option ")
 
 def user_input(prompt):
     user_input = input(prompt)
@@ -60,7 +60,7 @@ def test():
     destroy(1)
     print(read(0))
     select("C")
-    user_value = user_input("Please Enter a value: ")
+    user_value = user_input("Enter another item: ")
     print(user_value)
     list_all_items()
 
@@ -72,4 +72,4 @@ running = True
 while running:
     selection = user_input(
         "Press C to add to list, R to Read from list and P to display list")
-    select(selection)
+    running_two = select(selection)
