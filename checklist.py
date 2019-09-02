@@ -26,18 +26,18 @@ def list_all_items():
 
 def select(function_code):
     # Create item
-    if function_code == "C":
+    if function_code == "C" or "c":
         input_item = user_input("Input item: ")
         create(input_item)
         # Read item
-    elif function_code == "R":
+    elif function_code == "R" or "r":
         item_index = user_input("Index Number? ")
-
+        item_index = int(user_input)
         # Remember that item_index must actually exist or our program will crash.
         read(item_index)
 
         # Print all items
-    elif function_code == "P":
+    elif function_code == "P" or "p":
         list_all_items()
 
     # Catch all
@@ -67,9 +67,11 @@ def test():
     # print(read(1))
 
 
-test()
+# test()
 running = True
 while running:
     selection = user_input(
-        "Press C to add to list, R to Read from list and P to display list")
+        "Press C to add to list, R to Read from list and P to display list, Q to exit")
+    if selection == "Q":
+        running = False
     running_two = select(selection)
