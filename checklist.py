@@ -26,24 +26,27 @@ def list_all_items():
 
 def select(function_code):
     # Create item
-    if function_code == "C" or function_code == "c":
-        input_item = user_input("Input item: ")
-        create(input_item)
-        # Read item
-    elif function_code == "R" or function_code == "r":
-        #item_index = user_input("Index Number? ")
-        #item_index = int(item_index)
-        item_index = int(user_input("Index Number? "))
-        # Remember that item_index must actually exist or our program will crash.
-        print(read(item_index))
+    try:
+        if function_code == "C" or function_code == "c":
+            input_item = user_input("Input item: ")
+            create(input_item)
+            # Read item
+        elif function_code == "R" or function_code == "r":
+            #item_index = user_input("Index Number? ")
+            #item_index = int(item_index)
+            item_index = int(user_input("Index Number? "))
+            # Remember that item_index must actually exist or our program will crash.
+            print(read(item_index))
 
-        # Print all items
-    elif function_code == "P" or function_code == "p":
-        list_all_items()
+            # Print all items
+        elif function_code == "P" or function_code == "p":
+            list_all_items()
 
-    # Catch all
-    else:
-        print("Unknown Option ")
+        # Catch all
+        else:
+            print("Unknown Option ")
+    except:
+        print("Does not work, enter a number")        
 
 def user_input(prompt):
     user_input = input(prompt)
