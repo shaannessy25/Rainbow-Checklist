@@ -26,18 +26,19 @@ def list_all_items():
 
 def select(function_code):
     # Create item
-    if function_code == "C" or "c":
+    if function_code == "C" or function_code == "c":
         input_item = user_input("Input item: ")
         create(input_item)
         # Read item
-    elif function_code == "R" or "r":
-        item_index = user_input("Index Number? ")
-        item_index = int(user_input)
+    elif function_code == "R" or function_code == "r":
+        #item_index = user_input("Index Number? ")
+        #item_index = int(item_index)
+        item_index = int(user_input("Index Number? "))
         # Remember that item_index must actually exist or our program will crash.
-        read(item_index)
+        print(read(item_index))
 
         # Print all items
-    elif function_code == "P" or "p":
+    elif function_code == "P" or function_code == "p":
         list_all_items()
 
     # Catch all
