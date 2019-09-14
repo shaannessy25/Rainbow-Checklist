@@ -13,6 +13,10 @@ def update(index, item):
     checklist[index] = item
 
 
+def mark_completed(index):
+    update(index, " √ " + checklist[index])
+
+
 def destroy(index):
     checklist.pop(index)
 
@@ -49,8 +53,12 @@ def select(function_code):
         elif function_code == "Q" or function_code == "q":
             return False
         # Catch all
-       
-       
+
+        elif function_code == "M" or function_code == "m":
+            item_index = int(user_input("Index Number? "))
+            mark_completed(int(item_index))
+            return True
+
     except:
         print("Does not work, enter a number")
         return True       
